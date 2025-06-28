@@ -205,62 +205,6 @@ class DistGraph(Graph):
 
         return dist, parent
 
-g = {
-    "a": ["b", "e"],
-    "b": ["a", "c", "g"],
-    "c": ["b", "d"],
-    "d": ["c", "f"],
-    "e": ["a", "g", "f"],
-    "f": ["e", "d"],
-    "g": ["b", "e"]
-}
-
-graph = Graph(g)
-print(graph.dfs("a"))
-print(graph.bfs("a"))
-print(graph.get_components())
-
-print("-" * 37)
-#----------------------------
-
-g1 = {
-    "a": [("b", 3), ("e", 2)],
-    "b": [("a", 3), ("c", 4), ("g", 6)],
-    "c": [("b", 4), ("d", 5)],
-    "d": [("c", 5), ("f", 2)],
-    "e": [("a", 2), ("g", 7), ("f", 1)],
-    "f": [("e", 1), ("d", 2)],
-    "g": [("b", 6), ("e", 7)]
-}
-
-dist_graph = DistGraph(g1)
-print(dist_graph.dfs("a"))
-print(dist_graph.bfs("a"))
-print(dist_graph.get_components())
-print(dist_graph.kruskal())
-print(dist_graph.prim())
-#----------------------------
-
-print("-" * 37)
-g2 = {
-    "a": [("b", 28), ("f", 10)],
-    "b": [("a", 28), ("g", 14), ("c", 16)],
-    "c": [("b", 16), ("d", 12)],
-    "d": [("c", 12), ("e", 22), ("g", 18)],
-    "e": [("d", 22), ("f", 25), ("g", 24)],
-    "f": [("a", 10), ("e", 25)],
-    "g": [("b", 14), ("d", 18), ("e", 24)]
-}
-dist_graph2 = DistGraph(g2)
-print(dist_graph2.dfs("a"))
-print(dist_graph2.bfs("a"))
-print(dist_graph2.get_components())
-print(dist_graph2.prim())
-print(dist_graph2.dijkstra("a"))
-
-input()
-os.system("cls")
-
 class GraphInterface:
     def __init__(self, graph):
         self.graph = graph
@@ -322,8 +266,3 @@ class GraphInterface:
                 os.system("cls")
             else:
                 print("Invalid choice.")
-
-
-menu = GraphInterface(DistGraph(dist_graph).graph)
-
-menu.menu()

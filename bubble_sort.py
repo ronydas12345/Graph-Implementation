@@ -1,4 +1,4 @@
-import timeit
+#import timeit
 
 def bubble(l):
     N = len(l)
@@ -55,6 +55,7 @@ def quicksort(l):
     less, greater = [i for i in l[1:] if i <= pivot], [i for i in l[1:] if i > pivot]
     return quicksort(less) + [pivot] + quicksort(greater)
 
+"""
 n = [5, 9, 4, 2, 11, 15, 23, 31, 1, 6]
 
 def run_bubble(): return bubble(n.copy())
@@ -78,3 +79,4 @@ print(f"   Bubble: {b_result} ({b_time:.3f} ms)")
 print(f"Insertion: {i_result} ({i_time:.3f} ms)")
 print(f"    Merge: {m_result} ({m_time:.3f} ms)")
 print(f"QuickSort: {q_result} ({q_time:.3f} ms)")
+"""
